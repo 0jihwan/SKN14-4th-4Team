@@ -1,0 +1,9 @@
+<form method="post">
+    {% csrf_token %}
+    <h2>회원가입</h2>
+    <input type="text" name="username" placeholder="아이디"><br>
+    <input type="password" name="password1" placeholder="비밀번호"><br>
+    <input type="password" name="password2" placeholder="비밀번호 확인"><br>
+    <button type="submit">가입하기</button>
+    {% if error %}<div style="color:red">{{ error }}</div>{% endif %}
+</form>
