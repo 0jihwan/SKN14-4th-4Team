@@ -1,0 +1,18 @@
+<!-- templates/login.html -->
+<form method="post" style="margin-top:20px;">
+    {% csrf_token %}
+    <h2>로그인</h2>
+    <input type="text" name="username" placeholder="아이디"><br>
+    <input type="password" name="password" placeholder="비밀번호"><br>
+    <button type="submit">로그인</button>
+    {% if error %}
+        <div style="color:red">{{ error }}</div>
+    {% endif %}
+</form>
+
+<div style="margin-top:20px; ">
+    아직 회원이 아니신가요?
+    <a href="{% url 'signup' %}">
+        <button type="button">회원가입</button>
+    </a>
+</div>
